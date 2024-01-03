@@ -27,8 +27,6 @@ function twoSumMap(nums, target) {
     // x = target - cur
     let complement = target - cur;
 
-    // Store the current number and its index in the Map
-    map.set(nums[i], i);
 
     // Check if the complement exists in the Map
     if (map.has(complement)) {
@@ -36,6 +34,8 @@ function twoSumMap(nums, target) {
       return [map.get(complement), i];
     }
 
+    // Store the current number and its index in the Map
+    map.set(nums[i], i);
   }
   console.log('at end');
   throw new Error('No solution found');
